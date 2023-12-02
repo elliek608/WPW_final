@@ -14,29 +14,37 @@
     }
 
 
-    .text1 { 
+    .text1{ 
         font-family: "Helvetica";
         color: pink;
         font-weight: bold;
         font-size: 100px;
+        transition: 1s;
         text-align: center;
     }
 
-    .text1:hover {
-        font-size: 100px;
+    .replaced{
+        visibility: hidden;
+         position: relative;
     }
 
-    .text1:active {
-        font-size: 100px;
-        opacity: 0;
-    }
-    
+    .replaced:after {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "GAJI";
+}
+
+  
+ 
 </style>
 <body>
-    <div class= "text1" 
-style= "z-index: 990; opacity: 0;">
+<div class= "text1 replaced" 
+style= "z-index: 990;">
 GABI
 </div>
+
 
 </body>
 </html>
