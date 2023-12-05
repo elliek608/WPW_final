@@ -54,6 +54,7 @@
         .section {
             color: black;
             font-size: 21px;
+            font-weight: bold;
             background-color:rgb(30, 210, 80);
             border: none;
            padding:  20px;
