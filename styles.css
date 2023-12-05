@@ -6,7 +6,15 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-     
+        @media only screen and (max-width: 600px) {
+			h1 {
+				font-size: 30px;
+			}
+            .section {
+                font-size: 18px;
+            }
+		}
+
         body {
             background-color: rgb(30, 210, 80);
             font-family: 'Bebas Neue', sans-serif;
