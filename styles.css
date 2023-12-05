@@ -95,6 +95,7 @@
  .grid-item:hover {
      transform: scale(1.8) rotate(10deg);
      background-color: green;
+     border-radius: 50%;
      color: white;
      font-weight: bold;
 
@@ -116,7 +117,7 @@
 
 .grid-item2:hover {
     transform: scale(1.8) rotate(-10deg);
-    border-radius: 80%;
+    border-radius: 50%;
     background-color: rgb(15, 255, 15);
     color: black;
     font-weight: bold;
