@@ -1,50 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gabi is gajimodo</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>idontreallywannadotheworktoday</title>
+
 </head>
-<style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        background-color:rgb(rgb(161, 0, 19), green, blue);
-    }
 
-
-    .text1{ 
-        font-family: "Helvetica";
-        color: pink;
-        font-weight: bold;
-        font-size: 100px;
-        transition: 1s;
-        text-align: center;
-    }
-
-    .replaced{
-        visibility: hidden;
-         position: relative;
-    }
-
-    .replaced:after {
-    visibility: visible;
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "GAJI";
-}
-
-  
- 
-</style>
 <body>
-<div class= "text1 replaced" 
-style= "z-index: 990;">
-GABI
-</div>
+
+    <header>
+        <h1> GET SOME WORK DONE ( <span style="color:white">PLEASE</span> )</h1>
+    </header>
+
+    <div class="stopwatch">
+        <h1 id="displaytime">00:00:00</h1>
+        <div class="buttons">
+            <img src="stop.png" onclick="watchStop()">
+            <img src="play.png" onclick="watchStrart()">
+            <img src="reset.png" onclick="watchReset()">
+        </div>
+    </div>
+
+
+
+    <div class="archive-container">
+
+
+        <div class="section"> DESIGNING </div>
+        <div class="section"> SHORT BREAK </div>
+        <div class="section"> WRITING</div>
+
+        <div class="grid-item" onclick="rock()">
+            ROCK
+        </div>
+
+        <div class="grid-item" onclick="minesweeper()">
+            MINESWEEPER
+        </div>
+
+        <div class="grid-item" onclick="acnh()">
+            ANIMAL CROSSING
+        </div>
+
+        <div class="grid-item" onclick="musicals()">
+            MUSICALS
+        </div>
+
+        <div class="grid-item" onclick="wordle()">
+            WORDLE
+        </div>
+
+        <div class="grid-item" onclick="ghibli()">
+            GHIBLI
+        </div>
+
+        <div class="grid-item" onclick="kpop()">
+            KPOP
+        </div>
+
+        <div class="grid-item" onclick="puppy()">
+            PUPPY
+        </div>
+        <div class="grid-item" onclick="disney()">
+            DISNEY
+        </div>
+
+
+
+
+
+        <script>
+
+
+            let [seconds, minutes, hours] = [0, 0, 0];
+            let displaytime = document.getElementById("displaytime");
+            let timer = null;
+
+            function stopwatch() {
+                seconds++;
+                if (seconds == 60) {
+                    seconds = 0;
+                    minutes++;
+                    if (minutes == 60) {
+                        minutes = 0;
+                        hours++;
+                    }
+                }
+                let h = hours < 10 ? "0" + hours : hours;
+                let m = minutes < 10 ? "0" + minutes : minutes;
+                let s = seconds < 10 ? "0" + seconds : seconds;
+
+                displaytime.innerHTML = h + ":" + m + ":" + s;
+            }
+
+            function watchStrart() {
+                if (timer !== null) {
+                    clearInterval(timer);
+                }
+                timer = setInterval(stopwatch, 1000);
+            }
+
+            function watchStop() {
+                clearInterval(timer);
+            }
+
+            function watchReset() {
+                clearInterval(timer);
+                [seconds, minutes, hours] = [0, 0, 0];
+                displaytime.innerHTML = "00:00:00";
+            }
+
+            function acnh() {
+                window.open("acnh.html", "_blank");
+            }
+
+            function ghibli() {
+                window.open("ghibli.html", "_blank");
+            }
+
+            function disney() {
+                window.open("disney.html", "_blank");
+            }
+
+            function rock() {
+                window.open("rock.html", "_blank");
+            }
+
+            function musicals() {
+                window.open("musicals.html", "_blank");
+            }
+
+            function kpop() {
+                window.open("kpop.html", "_blank");
+            }
+
+            function minesweeper() {
+                window.open("https://g.co/kgs/wCqU5b", "_blank");
+            }
+
+            function wordle() {
+                window.open("https://www.nytimes.com/games/wordle/index.html", "_blank");
+            }
+
+            function puppy() {
+                window.open("puppy.html", "_blank");
+            }
+
+
+
+        </script>
 
 
 </body>
+
 </html>
